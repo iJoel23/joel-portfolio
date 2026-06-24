@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "stack": "Stack",
+    "contact": "Contact",
+    "languageToggle": "Change language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "badge": "Open to work",
+    "name": "Joel Leon",
+    "role": "Frontend Engineer — React · Next.js · TypeScript",
+    "description": "I build fast, accessible interfaces with attention to detail.",
+    "scroll": "Scroll",
+    "scrollToProjects": "Go to projects"
+  },
+  "projects": {
+    "title": "Selected Work",
+    "preview": "Preview",
+    "viewSite": "View site →",
+    "code": "Code →",
+    "technologies": "Technologies",
+    "openCaseStudy": "View case study: {{title}}",
+    "screenshot": "Screenshot {{n}}",
+    "modal": {
+      "close": "Close",
+      "closeBackdrop": "Close project details",
+      "technologies": "Project technologies"
+    }
+  },
+  "about": {
+    "title": "About",
+    "photo": "Photo",
+    "paragraph1": "I'm a frontend developer passionate about building clear, fast, and accessible web experiences.",
+    "paragraph2": "I've spent several years working with React and the modern JavaScript ecosystem, from prototypes to production-ready products.",
+    "paragraph3": "Outside of code, I'm interested in interface design, web performance, and learning tools that improve how we build for the web."
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "styling": "Styling",
+      "tools": "Tools & Workflow",
+      "cms": "CMS & E-commerce"
+    }
+  },
+  "contact": {
+    "title": "Let's work together",
+    "paragraph": "Have a project in mind or want to collaborate? Reach out and let's talk about how I can help.",
+    "sendEmail": "Send email",
+    "downloadCv": "Download CV"
+  },
+  "footer": {
+    "tagline": "Frontend Engineer · Lima, Peru",
+    "copyright": "© 2026 Joel Leon",
+    "builtWith": "Built with React, TypeScript, Tailwind & Motion",
+    "socialNav": "Social links"
+  },
+  "common": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}

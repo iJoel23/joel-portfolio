@@ -1,1 +1,224 @@
 @import "tailwindcss";
+
+/* ─── Design tokens (Tailwind v4 @theme) ─────────────────────────────────── */
+
+@theme {
+  /* Tipografía */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Clash Display", var(--font-sans);
+
+  /* Paleta "Indigo Aurora": indigo eléctrico + cian + violeta suave */
+  --color-accent: #5b52e8;
+  --color-accent-secondary: #06b6d4;
+  --color-accent-tertiary: #c084fc;
+
+  /* Superficies y texto */
+  --color-surface: #f8f7fc;
+  --color-text: #171717;
+  --color-text-muted: #737373;
+
+  /* Alinea utilidades indigo-* existentes con el acento principal */
+  --color-indigo-50: #eef0ff;
+  --color-indigo-600: #5b52e8;
+  --color-indigo-700: #4840d4;
+}
+
+/* Textura de grano (SVG noise, muy ligera) */
+@theme inline {
+  --noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Base global ────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glows ambientales: fijos, detrás del contenido, sin scroll horizontal */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 12% 18%,
+      color-mix(in srgb, var(--color-accent) 22%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 88% 55%,
+      color-mix(in srgb, var(--color-accent-secondary) 18%, transparent),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 45% 38% at 48% 92%,
+      color-mix(in srgb, var(--color-accent-tertiary) 16%, transparent),
+      transparent 62%
+    );
+  filter: blur(90px);
+  transform: translateZ(0);
+}
+
+/* Grano sutil por encima del fondo */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: var(--noise-texture);
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+/* Tipografía fluida en headings + familia display */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3vw + 1rem, 3rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 1.5vw + 0.75rem, 1.5rem);
+    line-height: 1.2;
+  }
+}
+
+/* Menos blur e intensidad en móvil/tablet para mejor rendimiento */
+@media (max-width: 767px) {
+  body::before {
+    filter: blur(56px);
+    background:
+      radial-gradient(
+        ellipse 70% 50% at 20% 15%,
+        color-mix(in srgb, var(--color-accent) 14%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 65% 45% at 80% 70%,
+        color-mix(in srgb, var(--color-accent-secondary) 12%, transparent),
+        transparent 68%
+      );
+  }
+
+  body::after {
+    opacity: 0.03;
+  }
+}
+
+/* Hero aurora: malla de gradientes con drift muy lento (solo transform) */
+@keyframes hero-aurora-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2%, 1.5%, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(1.5%, -1%, 0) scale(1.02);
+  }
+}
+
+.hero-aurora {
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+  opacity: 0.42;
+  will-change: transform;
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 25% 35%,
+      color-mix(in srgb, var(--color-accent) 28%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 50% 42% at 75% 55%,
+      color-mix(in srgb, var(--color-accent-secondary) 22%, transparent),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 48% 40% at 50% 75%,
+      color-mix(in srgb, var(--color-accent-tertiary) 20%, transparent),
+      transparent 62%
+    );
+  animation: hero-aurora-drift 28s ease-in-out infinite alternate;
+}
+
+.hero-aurora--static {
+  animation: none;
+}
+
+@media (max-width: 767px) {
+  .hero-aurora {
+    inset: -30%;
+    opacity: 0.3;
+    animation-duration: 32s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora {
+    animation: none;
+  }
+}
+
+/* Enlace de texto con subrayado animado al hover */
+@layer components {
+  .link-underline {
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition:
+      color 0.2s ease,
+      background-size 0.25s ease-out;
+  }
+
+  .link-underline:hover {
+    color: var(--color-accent);
+    background-size: 100% 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-underline {
+    transition: color 0.15s ease;
+  }
+
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}

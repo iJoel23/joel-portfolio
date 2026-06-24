@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "work": "Proyectos",
+    "about": "Sobre mí",
+    "stack": "Stack",
+    "contact": "Contacto",
+    "languageToggle": "Cambiar idioma",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "hero": {
+    "badge": "Disponible para trabajar",
+    "name": "Joel Leon",
+    "role": "Frontend Engineer — React · Next.js · TypeScript",
+    "description": "Construyo interfaces rápidas, accesibles y con atención al detalle.",
+    "scroll": "Scroll",
+    "scrollToProjects": "Ir a proyectos"
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "preview": "Vista previa",
+    "viewSite": "Ver sitio →",
+    "code": "Código →",
+    "technologies": "Tecnologías",
+    "openCaseStudy": "Ver case study: {{title}}",
+    "screenshot": "Captura {{n}}",
+    "modal": {
+      "close": "Cerrar",
+      "closeBackdrop": "Cerrar detalle del proyecto",
+      "technologies": "Tecnologías del proyecto"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "photo": "Foto",
+    "paragraph1": "Soy desarrollador frontend con pasión por crear experiencias web claras, rápidas y accesibles.",
+    "paragraph2": "Llevo varios años trabajando con React y el ecosistema moderno de JavaScript, desde prototipos hasta productos en producción.",
+    "paragraph3": "Fuera del código, me interesa el diseño de interfaces, la performance web y seguir aprendiendo herramientas que mejoren cómo construimos para la web."
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "categories": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks y librerías",
+      "styling": "Estilos",
+      "tools": "Herramientas y flujo de trabajo",
+      "cms": "CMS y e-commerce"
+    }
+  },
+  "contact": {
+    "title": "Trabajemos juntos",
+    "paragraph": "¿Tienes un proyecto en mente o quieres colaborar? Escríbeme y conversemos sobre cómo puedo ayudarte.",
+    "sendEmail": "Enviar email",
+    "downloadCv": "Descargar CV"
+  },
+  "footer": {
+    "tagline": "Frontend Engineer · Lima, Perú",
+    "copyright": "© 2026 Joel Leon",
+    "builtWith": "Hecho con React, TypeScript, Tailwind y Motion",
+    "socialNav": "Redes sociales"
+  },
+  "common": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}
