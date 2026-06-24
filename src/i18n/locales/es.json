@@ -12,8 +12,8 @@
     "badge": "Disponible para trabajar",
     "name": "Joel Leon",
     "role": "Frontend Engineer — React · Next.js · TypeScript",
-    "description": "Construyo interfaces rápidas, accesibles y con atención al detalle.",
-    "scroll": "Scroll",
+    "description": "Convierto diseños e ideas en interfaces rápidas, accesibles y reales — con código limpio y atención al detalle. Más de 2.5 años desarrollando para equipos y clientes de EE. UU., en React, Next.js y TypeScript.",
+    "scroll": "Bajar",
     "scrollToProjects": "Ir a proyectos"
   },
   "projects": {
@@ -33,9 +33,9 @@
   "about": {
     "title": "Sobre mí",
     "photo": "Foto",
-    "paragraph1": "Soy desarrollador frontend con pasión por crear experiencias web claras, rápidas y accesibles.",
-    "paragraph2": "Llevo varios años trabajando con React y el ecosistema moderno de JavaScript, desde prototipos hasta productos en producción.",
-    "paragraph3": "Fuera del código, me interesa el diseño de interfaces, la performance web y seguir aprendiendo herramientas que mejoren cómo construimos para la web."
+    "paragraph1": "Hola, soy Joel — frontend engineer radicado en Lima, Perú, trabajando en remoto con equipos y clientes de EE. UU. y LATAM. En los últimos 2.5+ años pasé de desarrollador junior a construir interfaces responsivas y centradas en el usuario con React, Next.js, TypeScript y Tailwind CSS.",
+    "paragraph2": "Me importan los detalles que hacen que una interfaz se sienta bien: código limpio y mantenible, interacciones fluidas, rendimiento y accesibilidad. Uso herramientas de IA como Claude y Cursor para avanzar más rápido — entendiendo y haciéndome cargo de cada línea que entrego.",
+    "paragraph3": "Antes de la tecnología trabajé como reclutador de TI buscando ingenieros senior para empresas de EE. UU., lo que me da una ventaja poco común: entiendo cómo los equipos contratan, se comunican y crecen. Bilingüe (ES/EN), doy lo mejor colaborando directamente con clientes — convirtiendo requerimientos y feedback en resultados."
   },
   "skills": {
     "title": "Tech Stack",
@@ -48,8 +48,8 @@
     }
   },
   "contact": {
-    "title": "Trabajemos juntos",
-    "paragraph": "¿Tienes un proyecto en mente o quieres colaborar? Escríbeme y conversemos sobre cómo puedo ayudarte.",
+    "title": "Construyamos algo",
+    "paragraph": "Disponible para roles frontend remotos y colaboraciones. Si buscas a alguien confiable, detallista y fácil de trabajar — hablemos.",
     "sendEmail": "Enviar email",
     "downloadCv": "Descargar CV"
   },

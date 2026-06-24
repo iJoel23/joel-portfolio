@@ -12,7 +12,7 @@
     "badge": "Open to work",
     "name": "Joel Leon",
     "role": "Frontend Engineer — React · Next.js · TypeScript",
-    "description": "I build fast, accessible interfaces with attention to detail.",
+    "description": "I turn designs and ideas into fast, accessible, real-world interfaces — with clean code and an eye for detail. 2.5+ years building for teams and clients across the US, in React, Next.js, and TypeScript.",
     "scroll": "Scroll",
     "scrollToProjects": "Go to projects"
   },
@@ -33,9 +33,9 @@
   "about": {
     "title": "About",
     "photo": "Photo",
-    "paragraph1": "I'm a frontend developer passionate about building clear, fast, and accessible web experiences.",
-    "paragraph2": "I've spent several years working with React and the modern JavaScript ecosystem, from prototypes to production-ready products.",
-    "paragraph3": "Outside of code, I'm interested in interface design, web performance, and learning tools that improve how we build for the web."
+    "paragraph1": "Hi, I'm Joel — a frontend engineer based in Lima, Peru, working remotely with teams and clients across the US and LATAM. Over the last 2.5+ years I've grown from junior developer into building responsive, user-focused interfaces with React, Next.js, TypeScript, and Tailwind CSS.",
+    "paragraph2": "I care about the details that make an interface feel right: clean, maintainable code, smooth interactions, performance, and accessibility. I use AI tools like Claude and Cursor to move faster — while owning and understanding every line I ship.",
+    "paragraph3": "Before tech, I worked as an IT recruiter sourcing senior engineers for US companies, which gives me an unusual edge: I understand how teams hire, communicate, and grow. Bilingual (EN/ES), I'm at my best collaborating directly with clients — turning requirements and feedback into results."
   },
   "skills": {
     "title": "Tech Stack",
@@ -48,8 +48,8 @@
     }
   },
   "contact": {
-    "title": "Let's work together",
-    "paragraph": "Have a project in mind or want to collaborate? Reach out and let's talk about how I can help.",
+    "title": "Let's build something",
+    "paragraph": "Open to remote frontend roles and collaborations. If you're looking for someone reliable, detail-oriented, and easy to work with — let's talk.",
     "sendEmail": "Send email",
     "downloadCv": "Download CV"
   },
