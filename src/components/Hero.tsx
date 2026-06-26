@@ -1,6 +1,6 @@
 import { motion, useReducedMotion, type Variants } from "motion/react"
 import { useTranslation } from "react-i18next"
-import { useModalOpen } from "../context/ModalOpenContext"
+import { useModalOpen } from "../context/useModalOpen"
 
 /** Duración y easing compartidos para el fade-in + slide-up */
 const EASE = [0.25, 0.1, 0.25, 1] as const

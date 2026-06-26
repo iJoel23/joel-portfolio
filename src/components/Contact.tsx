@@ -1,9 +1,9 @@
 import { motion, useReducedMotion, type Variants } from "motion/react"
 import { useTranslation } from "react-i18next"
 
-const EMAIL = "TODO_EMAIL"
-const GITHUB_URL = "TODO_GITHUB_URL"
-const LINKEDIN_URL = "TODO_LINKEDIN_URL"
+const EMAIL = "joeljoelleon96@gmail.com"
+const GITHUB_URL = "https://github.com/iJoel23"
+const LINKEDIN_URL = "https://www.linkedin.com/in/ijoel23/"
 
 const EASE = [0.25, 0.1, 0.25, 1] as const
 

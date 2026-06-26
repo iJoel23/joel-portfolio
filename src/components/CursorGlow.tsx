@@ -5,7 +5,7 @@ import {
   useSpring,
 } from "motion/react"
 import { useEffect, useState } from "react"
-import { useModalOpen } from "../context/ModalOpenContext"
+import { useModalOpen } from "../context/useModalOpen"
 
 /** Suavizado del seguimiento: más damping = menos rebote */
 const SPRING = { stiffness: 150, damping: 22, mass: 0.45 }

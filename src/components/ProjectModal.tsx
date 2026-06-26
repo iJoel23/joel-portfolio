@@ -111,12 +111,34 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   useEffect(() => {
     if (!project) return
 
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = "hidden"
-    closeButtonRef.current?.focus()
+    const scrollY = window.scrollY
+    const { style } = document.body
+    const previous = {
+      position: style.position,
+      top: style.top,
+      left: style.left,
+      right: style.right,
+      width: style.width,
+      overflow: style.overflow,
+    }
+
+    style.position = "fixed"
+    style.top = `-${scrollY}px`
+    style.left = "0"
+    style.right = "0"
+    style.width = "100%"
+    style.overflow = "hidden"
+
+    closeButtonRef.current?.focus({ preventScroll: true })
 
     return () => {
-      document.body.style.overflow = previousOverflow
+      style.position = previous.position
+      style.top = previous.top
+      style.left = previous.left
+      style.right = previous.right
+      style.width = previous.width
+      style.overflow = previous.overflow
+      window.scrollTo(0, scrollY)
     }
   }, [project])
 
@@ -138,11 +160,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   return (
     <AnimatePresence>
       {project && (
-        <div className="fixed inset-0 z-[100] overflow-hidden">
+        <div className="fixed inset-0 z-[100] isolate overflow-hidden">
           <motion.button
             type="button"
             aria-label={t("projects.modal.closeBackdrop")}
-            className="absolute inset-0 bg-neutral-900/40 will-change-[opacity]"
+            className="fixed inset-0 bg-neutral-950/60 will-change-[opacity]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -155,7 +177,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               role="dialog"
               aria-modal="true"
               aria-label={project.title}
-              className="pointer-events-auto flex h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-3xl border border-white/40 border-b-0 bg-white/90 shadow-2xl backdrop-blur-md will-change-transform"
+              className="pointer-events-auto flex h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-3xl border border-neutral-200 border-b-0 bg-white shadow-2xl will-change-transform lg:border-white/40 lg:bg-white/90 lg:backdrop-blur-md"
               initial={sheetInitial}
               animate={sheetAnimate}
               exit={sheetExit}
@@ -164,7 +186,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               }
               onClick={(event) => event.stopPropagation()}
             >
-              <header className="sticky top-0 z-20 shrink-0 bg-white/90 px-6 pt-3 pb-2 backdrop-blur-md sm:px-8">
+              <header className="relative z-20 shrink-0 border-b border-neutral-100 bg-white px-6 pt-3 pb-3 sm:px-8 lg:border-neutral-100/80 lg:bg-white/90 lg:backdrop-blur-md">
                 <div
                   className="flex items-center justify-center"
                   aria-hidden="true"
@@ -176,7 +198,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   ref={closeButtonRef}
                   type="button"
                   aria-label={t("projects.modal.close")}
-                  className="absolute top-3 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-white/70 text-neutral-600 transition-colors hover:text-accent sm:right-6"
+                  className="absolute top-3 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-neutral-100 text-neutral-600 transition-colors hover:text-accent sm:right-6 lg:border-white/50 lg:bg-white/70"
                   onClick={onClose}
                 >
                   <svg
@@ -193,7 +215,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </button>
               </header>
 
-              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-6 pb-8 lg:hidden">
+              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain bg-white px-6 pb-8 lg:hidden">
                 <ProjectDetails project={project} />
                 {project.images.length > 0 && (
                   <div className="mt-8">

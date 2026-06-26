@@ -7,7 +7,7 @@ import {
   type MouseEvent,
 } from "react"
 import { useTranslation } from "react-i18next"
-import { useModalOpen } from "../context/ModalOpenContext"
+import { useModalOpen } from "../context/useModalOpen"
 import ProjectModal from "./ProjectModal"
 
 export type Project = {
@@ -52,6 +52,7 @@ const projects: Project[] = [
       "Personal portfolio showcasing projects, skills, and contact — with motion design, i18n, and a polished case-study experience.",
     tech: ["React", "TypeScript", "Tailwind CSS", "Motion", "i18n"],
     images: ["/JoelLeon-home.png"],
+    liveUrl: "https://ijoel23portfoliov3.netlify.app/",
     year: "2026",
     role: "Design & Development",
     longDescription:
@@ -109,6 +110,7 @@ const projects: Project[] = [
       "/Inbody-insidep.png",
       "/Inbody-insidep2.png"
     ],
+    liveUrl: "https://inbody.es/",
     year: "2025",
     role: "Frontend Developer",
     longDescription:
