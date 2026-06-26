@@ -1,9 +1,10 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import type { TranslationKey } from "../i18n/typecheck"
 
 type NavLink = {
-  labelKey: "nav.work" | "nav.about" | "nav.stack" | "nav.contact"
+  labelKey: Extract<TranslationKey, `nav.${string}`>
   href: string
 }
 
@@ -65,14 +66,14 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-neutral-100/80 bg-white/80 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full overflow-x-hidden border-b border-neutral-100/80 bg-white/80 backdrop-blur-md">
       <nav
-        className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24"
+        className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-6 sm:px-10 md:px-16 lg:px-24"
         aria-label="Navegación principal"
       >
         <a
           href="#hero"
-          className="link-underline text-sm font-semibold tracking-tight text-neutral-900 sm:text-base"
+          className="link-underline min-w-0 shrink truncate text-sm font-semibold tracking-tight text-neutral-900 sm:text-base"
           onClick={closeMenu}
         >
           Joel Leon

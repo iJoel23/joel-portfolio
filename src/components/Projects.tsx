@@ -16,73 +16,103 @@ export type Project = {
   tech: string[]
   liveUrl?: string
   codeUrl?: string
-  image: string
-  /** Case study: varios párrafos separados por línea en blanco */
+  images: string[]
   longDescription?: string
   role?: string
-  images?: string[]
   year?: string | number
 }
 
-// TODO: Reemplaza cada entrada con tus proyectos reales
 const projects: Project[] = [
   {
-    title: "E-Commerce Dashboard",
+    title: "PeruCalcs",
     description:
-      "Panel de administración con métricas en tiempo real, gestión de inventario y reportes exportables.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    codeUrl: "https://github.com/example",
-    image: "/projects/ecommerce-dashboard.png", // TODO: imagen real
-    year: 2025,
-    role: "Frontend Lead",
-    images: ["/projects/ecommerce-1.png", "/projects/ecommerce-2.png"], // TODO: capturas reales
-    longDescription:
-      "Diseñé e implementé un dashboard administrativo orientado a equipos de operaciones que necesitaban visibilidad en tiempo real sobre ventas e inventario.\n\nEl reto principal fue equilibrar densidad de información con claridad visual, usando gráficos interactivos, filtros avanzados y estados de carga optimistas para una experiencia fluida.",
-  },
-  {
-    title: "Task Flow App",
-    description:
-      "Aplicación de productividad con tableros Kanban, arrastrar y soltar, y sincronización en la nube.",
-    tech: ["Next.js", "TypeScript", "Prisma"],
-    liveUrl: "https://example.com",
-    image: "/projects/task-flow.png", // TODO: imagen real
-    year: 2024,
-    role: "Full-stack Developer",
-    images: ["/projects/taskflow-1.png", "/projects/taskflow-2.png"], // TODO: capturas reales
-    longDescription:
-      "Aplicación de productividad inspirada en flujos Kanban con drag-and-drop, etiquetas y sincronización en la nube entre dispositivos.\n\nImplementé arquitectura con Next.js App Router, persistencia con Prisma y optimizaciones de renderizado para tableros con cientos de tarjetas.",
-  },
-  {
-    title: "Weather Widget",
-    description:
-      "Widget meteorológico minimalista con pronóstico por hora y geolocalización automática.",
-    tech: ["React", "OpenWeather API"],
-    codeUrl: "https://github.com/example",
-    image: "/projects/weather-widget.png", // TODO: imagen real
-    year: 2024,
-    role: "Frontend Developer",
-    images: ["/projects/weather-1.png"], // TODO: capturas reales
-    longDescription:
-      "Widget meteorológico minimalista con geolocalización automática y pronóstico por hora.\n\nEnfocado en performance y accesibilidad: skeleton states, soporte para unidades métricas/imperiales y diseño responsive para embed en landing pages.",
-  },
-  {
-    title: "Portfolio v2",
-    description:
-      "Sitio personal con animaciones fluidas, modo oscuro y rendimiento optimizado.",
-    tech: ["Vite", "Motion", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    codeUrl: "https://github.com/example",
-    image: "/projects/portfolio.png", // TODO: imagen real
-    year: 2026,
-    role: "Design & Development",
+      "Suite of SEO-optimized financial calculators for the Peruvian market — built for clarity, speed, and accessibility.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "SEO",
+      "Accessibility",
+    ],
+    liveUrl: "https://perucalcs.netlify.app/",
     images: [
-      "/projects/portfolio-1.png",
-      "/projects/portfolio-2.png",
-      "/projects/portfolio-3.png",
-    ], // TODO: capturas reales
+      "/PeruCalcs-home.png",
+      "/PeruCalcs-calculators.png",
+      "/PeruCalcs-functionality.png",
+    ],
+    year: "2025",
+    role: "Frontend Developer",
     longDescription:
-      "Rediseño completo del portfolio personal con enfoque en identidad visual, motion design accesible y arquitectura modular en React.\n\nIntegré animaciones con Motion respetando prefers-reduced-motion, fondo ambiental con glows y spotlight interactivo en tarjetas de proyectos.",
+      "PeruCalcs is a collection of financial calculators tailored for Peru — from loan and tax tools to everyday number crunching — designed to rank well in search and work flawlessly on mobile.\n\nI built the product with Next.js and TypeScript, focusing on semantic HTML, accessible forms, and performance. Each calculator is a self-contained module with clear UX, validation, and shareable results.\n\nThe project combines SEO best practices (structured metadata, fast LCP) with a clean Tailwind UI that scales as new calculators are added.",
+  },
+  {
+    title: "Developer Portfolio",
+    description:
+      "Personal portfolio showcasing projects, skills, and contact — with motion design, i18n, and a polished case-study experience.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Motion", "i18n"],
+    images: ["/JoelLeon-home.png"],
+    year: "2026",
+    role: "Design & Development",
+    longDescription:
+      "This site is my living portfolio: a minimal, performance-conscious showcase built with Vite, React, and TypeScript.\n\nIt features ambient visuals, cursor-driven highlights, scroll reveals, and a bottom-sheet project detail flow — all respecting prefers-reduced-motion.\n\nFull English/Spanish support via react-i18next, with a language-aware CV download and a component architecture ready to grow as I add more case studies.",
+  },
+  {
+    title: "Winning Numbers",
+    description:
+      "Contributed frontend and CSS architecture improvements to a high-traffic WordPress lottery results platform.",
+    tech: [
+      "WordPress",
+      "CSS Architecture",
+      "Git",
+      "Pull Requests",
+      "QA",
+    ],
+    liveUrl: "https://winningnumbers.net/",
+    images: ["/WinningNumbers-home.png",
+      "/WinningNumbers-filters.png",
+      "/WinningNumbers-faq.png"
+    ],
+    year: "2025",
+    role: "Frontend Developer",
+    longDescription:
+      "Winning Numbers is a WordPress-powered site serving lottery results and related content to a broad audience.\n\nI worked within an established codebase — refactoring CSS for maintainability, submitting changes via pull requests, and validating updates through structured QA.\n\nThe focus was reliable delivery in a team workflow: clear diffs, responsive layouts, and consistent patterns across templates.",
+  },
+  {
+    title: "Cardiology Coffee",
+    description:
+      "Shopify storefront for a specialty coffee brand — custom Liquid templates and responsive styling.",
+    tech: ["Shopify", "Liquid", "CSS", "Responsive Design"],
+    liveUrl: "https://cardiologycoffee.com/",
+    images: [
+      "/CardiologyCoffee-home.png",
+      "/CardiologyCoffee-testimonials.png",
+      "/CardiologyCoffee-timeline.png"
+    ],
+    year: "2025",
+    role: "Shopify Developer",
+    longDescription:
+      "Cardiology Coffee is a Shopify e-commerce experience for a specialty coffee brand.\n\nI customized theme sections with Liquid, tuned CSS for brand consistency, and ensured the storefront reads well across breakpoints — from product grids to checkout-adjacent flows.\n\nScreenshots coming soon; the live site reflects the current production theme.",
+  },
+  {
+    title: "Inbody Coaching",
+    description:
+      "WordPress site for a coaching brand — performance, Core Web Vitals, and SEO-focused frontend work.",
+    tech: [
+      "WordPress",
+      "Core Web Vitals",
+      "Performance",
+      "CSS",
+      "SEO",
+    ],
+    images: ["/Inbody-home.png",
+      "/Inbody-insidep.png",
+      "/Inbody-insidep2.png"
+    ],
+    year: "2025",
+    role: "Frontend Developer",
+    longDescription:
+      "Inbody Coaching is a WordPress marketing site for a fitness coaching business.\n\nI improved load performance and Core Web Vitals through asset optimization, lean CSS, and careful template structure — while keeping the design on-brand and easy to update.\n\nSEO fundamentals (headings, meta, semantic markup) were applied so the site could compete locally and convert visitors into leads.",
   },
 ]
 
@@ -151,6 +181,8 @@ function ProjectCard({
     "--my": "50%",
   } as CSSProperties
 
+  const previewImage = project.images[0]
+
   return (
     <motion.article
       variants={variants}
@@ -187,14 +219,22 @@ function ProjectCard({
 
       <div className="relative z-[2] overflow-hidden border-b border-white/30">
         <motion.div
-          className="flex aspect-video w-full items-center justify-center bg-white/40 backdrop-blur-sm"
-          aria-hidden="true"
+          className="flex aspect-video w-full items-center justify-center overflow-hidden bg-white/40 backdrop-blur-sm"
           whileHover={spotlightEnabled ? { scale: 1.04 } : undefined}
           transition={HOVER_TRANSITION}
         >
-          <span className="text-sm font-medium text-neutral-500">
-            {t("projects.preview")}
-          </span>
+          {previewImage ? (
+            <img
+              src={previewImage}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <span className="text-sm font-medium text-neutral-500">
+              {t("projects.preview")}
+            </span>
+          )}
         </motion.div>
       </div>
 

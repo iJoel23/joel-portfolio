@@ -34,7 +34,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="px-6 py-24 sm:px-10 md:px-16 lg:px-24"
+      className="overflow-x-hidden px-6 py-24 sm:px-10 md:px-16 lg:px-24"
     >
       <motion.div
         className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20"
@@ -48,9 +48,12 @@ export default function About() {
           className="flex aspect-square w-full max-w-sm items-center justify-center rounded-2xl border border-white/40 bg-white/60 backdrop-blur-md md:max-w-none"
           aria-hidden="true"
         >
-          <span className="text-sm font-medium text-neutral-500">
-            {t("about.photo")}
-          </span>
+          <img
+          src="/JoelLeon.jpg"
+          alt="Joel Leon"
+          loading="lazy"
+          className="w-full rounded-2xl object-cover"
+        />
         </motion.div>
 
         <motion.div variants={variants} className="flex flex-col">

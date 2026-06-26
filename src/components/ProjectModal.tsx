@@ -11,21 +11,21 @@ type ProjectModalProps = {
 const SHEET_SPRING = { type: "spring" as const, damping: 34, stiffness: 320 }
 
 function ProjectGallery({ project }: { project: Project }) {
-  const { t } = useTranslation()
-
-  if (!project.images?.length) return null
+  if (!project.images.length) return null
 
   return (
     <div className="space-y-4">
-      {project.images.map((_, index) => (
+      {project.images.map((src, index) => (
         <div
           key={`${project.title}-image-${index}`}
-          className="flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-white/40 bg-white/50 backdrop-blur-sm"
+          className="aspect-video overflow-hidden rounded-xl border border-white/40 bg-white/50 backdrop-blur-sm"
         >
-          {/* TODO: Reemplazar por <img src={project.images[index]} alt={...} /> */}
-          <span className="text-sm font-medium text-neutral-500">
-            {t("projects.screenshot", { n: index + 1 })}
-          </span>
+          <img
+            src={src}
+            alt={`${project.title} screenshot`}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
         </div>
       ))}
     </div>
@@ -43,7 +43,7 @@ function ProjectDetails({ project }: { project: Project }) {
         {project.role && <span>{project.role}</span>}
       </div>
 
-      <h2 className="font-display mt-2 text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl">
+      <h2 className="font-display mt-2 break-words text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl">
         {project.title}
       </h2>
 
@@ -155,7 +155,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               role="dialog"
               aria-modal="true"
               aria-label={project.title}
-              className="pointer-events-auto flex h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-3xl border border-white/40 border-b-0 bg-white/85 shadow-2xl backdrop-blur-xl will-change-transform"
+              className="pointer-events-auto flex h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-3xl border border-white/40 border-b-0 bg-white/90 shadow-2xl backdrop-blur-md will-change-transform"
               initial={sheetInitial}
               animate={sheetAnimate}
               exit={sheetExit}
@@ -195,7 +195,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
               <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-6 pb-8 lg:hidden">
                 <ProjectDetails project={project} />
-                {project.images && project.images.length > 0 && (
+                {project.images.length > 0 && (
                   <div className="mt-8">
                     <ProjectGallery project={project} />
                   </div>

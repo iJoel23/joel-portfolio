@@ -4,6 +4,7 @@ import CursorGlow from "./components/CursorGlow"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import LanguageTransition from "./components/LanguageTransition"
+import MoreWork from "./components/MoreWork"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import Skills from "./components/Skills"
@@ -18,6 +19,7 @@ function App() {
         <LanguageTransition>
           <Hero />
           <Projects />
+          <MoreWork />
           <About />
           <Skills />
           <Contact />

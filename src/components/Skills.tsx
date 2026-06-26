@@ -1,13 +1,9 @@
 import { motion, useReducedMotion, type Variants } from "motion/react"
 import { useTranslation } from "react-i18next"
+import type { TranslationKey } from "../i18n/typecheck"
 
 type SkillCategory = {
-  titleKey:
-    | "skills.categories.languages"
-    | "skills.categories.frameworks"
-    | "skills.categories.styling"
-    | "skills.categories.tools"
-    | "skills.categories.cms"
+  titleKey: Extract<TranslationKey, `skills.categories.${string}`>
   skills: string[]
 }
 
@@ -100,7 +96,7 @@ export default function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="px-6 py-24 sm:px-10 md:px-16 lg:px-24"
+      className="overflow-x-hidden px-6 py-24 sm:px-10 md:px-16 lg:px-24"
     >
       <div className="mx-auto max-w-5xl">
         <h2

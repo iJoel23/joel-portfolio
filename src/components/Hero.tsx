@@ -94,7 +94,7 @@ export default function Hero() {
 
         <motion.p
           variants={variants}
-          className="mt-8 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:mt-10 sm:text-xl md:text-2xl"
+          className="mt-8 max-w-2xl break-words text-lg leading-relaxed text-neutral-600 sm:mt-10 sm:text-xl md:text-2xl"
         >
           {t("hero.description")}
         </motion.p>

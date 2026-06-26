@@ -62,5 +62,9 @@
   "common": {
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "moreWork": {
+    "title": "More Work",
+    "viewSite": "View site"
   }
 }

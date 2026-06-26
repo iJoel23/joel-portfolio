@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-white/20 pt-8 text-center text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p>{t("footer.copyright")}</p>
-          <p className="text-neutral-400">{t("footer.builtWith")}</p>
+          <p className="break-words text-neutral-400">{t("footer.builtWith")}</p>
         </div>
       </motion.div>
     </footer>

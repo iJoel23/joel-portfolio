@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next"
 const EMAIL = "TODO_EMAIL"
 const GITHUB_URL = "TODO_GITHUB_URL"
 const LINKEDIN_URL = "TODO_LINKEDIN_URL"
-const CV_URL = "TODO_CV_URL"
 
 const EASE = [0.25, 0.1, 0.25, 1] as const
 
@@ -30,16 +29,20 @@ const reducedItemVariants: Variants = {
 }
 
 export default function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const prefersReducedMotion = useReducedMotion()
   const shouldReduceMotion = prefersReducedMotion === true
   const variants = shouldReduceMotion ? reducedItemVariants : itemVariants
+
+  const isEs = i18n.language.startsWith("es")
+  const cvFile = isEs ? "/cv-es.pdf" : "/cv-en.pdf"
+  const cvDownloadName = isEs ? "Joel_Leon_CV_ES.pdf" : "Joel_Leon_CV_EN.pdf"
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="px-6 py-32 sm:px-10 md:px-16 lg:px-24"
+      className="overflow-x-hidden px-6 py-32 sm:px-10 md:px-16 lg:px-24"
     >
       <motion.div
         className="mx-auto flex max-w-2xl flex-col items-center text-center"
@@ -51,7 +54,7 @@ export default function Contact() {
         <motion.h2
           id="contact-heading"
           variants={variants}
-          className="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl"
+          className="text-3xl font-semibold tracking-tight text-balance text-neutral-900 sm:text-4xl md:text-5xl"
         >
           {t("contact.title")}
         </motion.h2>
@@ -92,7 +95,8 @@ export default function Contact() {
             {t("common.linkedin")}
           </a>
           <a
-            href={CV_URL}
+            href={cvFile}
+            download={cvDownloadName}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-white/40 bg-white/60 px-4 py-2 text-sm font-medium text-neutral-800 backdrop-blur-md transition-colors hover:border-indigo-200 hover:text-indigo-600"
